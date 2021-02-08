@@ -1,3 +1,5 @@
+const HOST_URL_PORT = process.env.HOST_URL_PORT
+
 module.exports = {
     "apps": [
       {
@@ -5,7 +7,7 @@ module.exports = {
         "appId": process.env.APP_ID,
         "masterKey": process.env.MASTER_KEY,
         "appName": process.env.PARSE_DASHBOARD_APP_NAME,
-        graphQLServerURL: `http://${process.env.HOST_URL}:1337/graphql`
+        graphQLServerURL: `http://${HOST_URL_PORT}/graphql`
       }
     ],
     "users": [

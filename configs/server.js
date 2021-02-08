@@ -1,14 +1,14 @@
-const HOST_URL = process.env.HOST_URL || 'localhost'
+const HOST_URL_PORT = process.env.HOST_URL_PORT
 module.exports = {
     databaseURI: process.env.DATABASE_URI,
     cloud: `${__dirname}/../cloud/main.js`, // Absolute path to your Cloud Code
     appId: process.env.APP_ID,
     masterKey: process.env.MASTER_KEY, // Keep this key secret!
     fileKey: 'optionalFileKey',
-    serverURL: `http://${HOST_URL}:1337/parse`, // Don't forget to change to https if needed
+    serverURL: `http://${HOST_URL_PORT}/parse`, // Don't forget to change to https if needed
     mountGraphQL: true,
     mountPlayground: true,
-    publicServerURL: `http://${HOST_URL}:1337/parse`,
+    publicServerURL: `http://${HOST_URL_PORT}/parse`,
     "filesAdapter": {
       "module": "@parse/s3-files-adapter",
       "options": {

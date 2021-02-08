@@ -4,7 +4,8 @@ const ParseDashboard = require('parse-dashboard');
 const serverConfig = require('./configs/server')
 const app = express();
 
-const HOST_URL = process.env.HOST_URL || 'localhost'
+const HOST_URL_PORT = process.env.HOST_URL_PORT
+const PORT = process.env.PORT
 Parse.initialize(process.env.APP_ID,null,process.env.MASTER_KEY);
 
 const parseServer = new ParseServer({ ...serverConfig });
@@ -37,6 +38,6 @@ app.use('/dashboard', new ParseDashboard(require('./configs/dashboard'),{ allowI
 app.use('/apis/boxs', require('./apis/boxs'))
 app.use('/parse', parseServerApi); //  <-- Moved here
 
-app.listen(1337, function() {
-  console.log(`parse-server-example running on port: http://${HOST_URL}:1337.`);
+app.listen(PORT, function() {
+  console.log(`parse-server-example running on port: http://${HOST_URL_PORT}.`);
 });
