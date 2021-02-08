@@ -5,7 +5,7 @@ const serverConfig = require('./configs/server')
 const app = express();
 
 const HOST_URL_PORT = process.env.HOST_URL_PORT
-const PORT = process.env.PORT
+const PORT = process.env.PORT || '1337'
 Parse.initialize(process.env.APP_ID,null,process.env.MASTER_KEY);
 
 const parseServer = new ParseServer({ ...serverConfig });
